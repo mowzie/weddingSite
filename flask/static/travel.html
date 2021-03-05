@@ -35,7 +35,7 @@
                   <a href="story.html">Our Story</a>
                 </li>
                 <li>
-                  <a href="travel.html">Travel</a>
+                  <a href="travel.html" class='active'>Travel</a>
                 </li>
                 <li>
                   <a href="photos.html">Photos</a>
@@ -69,36 +69,46 @@
                   <a href="story.html">Our Story</a>
                 </li>
                 <li>
-                  <a href="travel.html">Travel</a>
+                  <a href="travel.html" class='active'>Travel</a>
                 </li>
                 <li>
                   <a href="photos.html">Photos</a>
                 </li>
                 <li>
-                  <a href="registry.html" class='active'>Registry</a>
+                  <a href="registry.html">Registry</a>
                 </li>
               </ul>
             </div>
           </div>
-            <div class="slideshow-container photo">
-              <div class="mySlides fade">
-                <img src="img/photo4.jpg" style="width:100%">
-              </div> 
-              <div class="mySlides fade">
-                <img src="img/photo2.jpg" style="width:100%">
+          <div class="travel-info">
+            <div class="wedding">
+              <div>
+                We'll be Prince Peace Lutheran Church
               </div>
-             <div class="mySlides fade">
-                <img src="img/photo3.jpg" style="width:100%">
+              <div class="map">
+                <iframe
+                  title="Map of Venue"
+                  style="border:0"
+                  loading="lazy"
+                  allowfullscreen
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDDm0cbOuP4v3KjAsvpwg_npbnu39gPjIs
+                    &q=Prince+Peace+Lutheran+Church,Minneapolis+MN">
+                </iframe>
               </div>
-              <div class="mySlides fade">
-                <img src="img/photo5.jpg" style="width:100%">
-              </div>
-              <div class="mySlides fade">
-                <img src="img/photo6.jpg" style="width:100%">
-              </div>
-            <a class="left carousel-control" href="#cptbc_676" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#cptbc_676" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
+          <div class="flights">
+            <div>
+            flight info!
+            <ul>
+              <li>
+            <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooagcIARIDU0VBEgoyMDIxLTA4LTIwcgcIARIDTVNQKABAEEgXUABYFxogagcIARIDTVNQEgoyMDIxLTA4LTIycgcIARIDU0VBKABwAYIBCwj___________8BQAFIAZgBAQ&hl=en&authuser=0">Google Flights</a>
+          </li><li><a href="https://www.expedia.com/Flights-Search?flight-type=on&mode=search&trip=roundtrip&leg1=from%3ASeattle+%28SEA+-+Seattle-Tacoma+Intl.%29%2Cto%3AMinneapolis+%28MSP+-+All+Airports%29%2Cdeparture%3A8%2F20%2F2021TANYT&options=cabinclass%3Aeconomy&leg2=from%3AMinneapolis+%28MSP+-+All+Airports%29%2Cto%3ASeattle+%28SEA+-+Seattle-Tacoma+Intl.%29%2Cdeparture%3A8%2F22%2F2021TANYT&passengers=children%3A0%2Cadults%3A1%2Cseniors%3A0%2Cinfantinlap%3AY&fromDate=8%2F20%2F2021&toDate=8%2F22%2F2021&startDate=2021-08-20&endDate=2021-08-22">Expedia</a>
+          </li>
+          </ul>
+        </div>
+          </div>
+        </div>
+      </div>
           <div>
             <div class="infoBlockBottom">
             </div>
@@ -116,22 +126,7 @@
         }
       };
 
-      var slideIndex = 0;
-      showSlides();
       countdown();
-
-      function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 5000); // Change image every 2 seconds
-      }
-
       function countdown() {
         // Set the date we're counting down to
         var countDownDate = new Date("August 21, 2021").getTime();
@@ -150,5 +145,6 @@
       }
 
       </script>
+    
   </body>
 </html>

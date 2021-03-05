@@ -41,7 +41,7 @@
                   <a href="photos.html">Photos</a>
                 </li>
                 <li>
-                  <a href="registry.html">Registry</a>
+                  <a href="registry.html" class='active'>Registry</a>
                 </li>
             </ul>
             </div>
@@ -80,25 +80,9 @@
               </ul>
             </div>
           </div>
-            <div class="slideshow-container photo">
-              <div class="mySlides fade">
-                <img src="img/photo4.jpg" style="width:100%">
-              </div> 
-              <div class="mySlides fade">
-                <img src="img/photo2.jpg" style="width:100%">
-              </div>
-             <div class="mySlides fade">
-                <img src="img/photo3.jpg" style="width:100%">
-              </div>
-              <div class="mySlides fade">
-                <img src="img/photo5.jpg" style="width:100%">
-              </div>
-              <div class="mySlides fade">
-                <img src="img/photo6.jpg" style="width:100%">
-              </div>
-            <a class="left carousel-control" href="#cptbc_676" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#cptbc_676" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
+          <div style="text-align: center;">
+            Coming Soon!
+          </div>
           <div>
             <div class="infoBlockBottom">
             </div>
@@ -116,21 +100,8 @@
         }
       };
 
-      var slideIndex = 0;
-      showSlides();
+     
       countdown();
-
-      function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 5000); // Change image every 2 seconds
-      }
 
       function countdown() {
         // Set the date we're counting down to
