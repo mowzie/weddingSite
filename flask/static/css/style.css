@@ -3,7 +3,7 @@ div {
 }
 
 .background1 {
-  background: url(../images/tile.jpg), url(../images/background.jfif);
+  background: url(../img/tile.jpg), url(../img/background.jfif);
   background-size: auto, cover;
   background-blend-mode: saturation;
 }

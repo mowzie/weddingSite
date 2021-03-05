@@ -1,23 +1,14 @@
 version: "3"
 services:
-  nginx:
-    container_name: nginx
+  flask:
+    container_name: flask
     build:
-      context: ./frontend
+      context: ./flask
       dockerfile: Dockerfile
     ports:
-      - 9090:80
-
-  backend:
-    container_name: backend
-    build:
-      context: ./backend/
-      dockerfile: Dockerfile
-    expose:
-      - 5000
-    #  volumes:
-    #    - ./backend:/usr/src/app
+      - "80:5000"
     environment:
       - FLASK_ENV=development
       - FLASK_APP=app.py
       - FLASK_DEBUG=1
+    command: flask run --host=0.0.0.0 --port 5000
