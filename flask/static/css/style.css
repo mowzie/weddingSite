@@ -2,7 +2,7 @@ div {
     color:antiquewhite;
 }
 
-.background1 {
+.background {
   background: url(../img/tile.jpg), url(../img/background.jfif);
   background-size: auto, cover;
   background-blend-mode: saturation;
