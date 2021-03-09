@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set active_page = "travel" %}
+
+{% block content %}
+<div class="travel">
+  <div class="info">
+    <div>
+      We'll be Prince Peace Lutheran Church for the ceremony: Pastor Strawn presiding.<br>
+    </div>
+    <div class="map">
+      <iframe
+        allowfullscreen=""
+        style="width:100%;min-height:150px;"
+        title="Map of Venue"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDDm0cbOuP4v3KjAsvpwg_npbnu39gPjIs&q=Prince+Peace+Lutheran+Church,Minneapolis+MN">
+      </iframe>
+    </div>
+  </div>
+  <div class="info">
+    <div>
+    If you'll need to a place to stay, we recommend the Best Western.<br>
+    It's reasonably priced and in a good central location (plus the Green Mill restaurant is pretty delicious!)
+  </div>
+    <div class="map">
+      <iframe
+        allowfullscreen=""
+        style="width:100%;height:30vh;"
+        title="Map of Hotel"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDDm0cbOuP4v3KjAsvpwg_npbnu39gPjIs
+        &q=Best+Western+Plus+St.+Paul+North,Minneapolis+MN">
+      </iframe>
+    </div>
+  </div>
+  <div class="info">
+    <div>
+      If you're traveling from Washington (like the groom...)<br>
+      Here's some flight links from SEA -> MSP<br>
+      Feel free to come later / leave earlier or even use a different booking place. <br>
+      These are just here to help with an idea.
+    </div>
+    <div class="map">
+      <ul>
+        <li>
+          <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooagcIARIDU0VBEgoyMDIxLTA4LTIwcgcIARIDTVNQKABAEEgXUABYFxogagcIARIDTVNQEgoyMDIxLTA4LTIycgcIARIDU0VBKABwAYIBCwj___________8BQAFIAZgBAQ&hl=en&authuser=0">Google Flights</a>
+        </li>
+        <li>
+          <a href="https://www.expedia.com/Flights-Search?flight-type=on&mode=search&trip=roundtrip&leg1=from%3ASeattle+%28SEA+-+Seattle-Tacoma+Intl.%29%2Cto%3AMinneapolis+%28MSP+-+All+Airports%29%2Cdeparture%3A8%2F20%2F2021TANYT&options=cabinclass%3Aeconomy&leg2=from%3AMinneapolis+%28MSP+-+All+Airports%29%2Cto%3ASeattle+%28SEA+-+Seattle-Tacoma+Intl.%29%2Cdeparture%3A8%2F22%2F2021TANYT&passengers=children%3A0%2Cadults%3A1%2Cseniors%3A0%2Cinfantinlap%3AY&fromDate=8%2F20%2F2021&toDate=8%2F22%2F2021&startDate=2021-08-20&endDate=2021-08-22">Expedia</a>
+        </li>
+        <li>
+          <a href="https://www.priceline.com/m/fly/search/SEA-MSP-20210820/MSP-SEA-20210822/?cabin-class=ECO&no-date-search=false&num-adults=1&refclickid=D%3AcFlight16015637720g3182265458021555977047kwd-246996306%7C9033356%7C&sbsroute=slice1&search-type=1111&vrid=249b1ba06c8a493e982f5bd46b648059">Priceline</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

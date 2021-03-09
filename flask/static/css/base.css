@@ -1,6 +1,4 @@
-div {
-    color:antiquewhite;
-}
+
 
 .background {
   background: url(../img/tile.jpg), url(../img/background.jfif);
@@ -10,18 +8,12 @@ div {
 
 .infoBlockTop {
     text-align: center;
+    font-size: larger;
 }
 
-.map {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.names {
+.names div {
     line-height: 1;
-    font-family: cursive;
-    /* color: #fff; */
+    font-family: compendium, sans-serif;
     font-size: 60px;
     font-weight: normal;
     margin: 16px 0;
@@ -49,18 +41,6 @@ div {
     padding: 20px 0 20px 72px;
 }
 
-.flights ul li a{
-  color: coral;
-}
-
-
-
-.photo {
-  display: block;
-  width: 50%;
-  padding: 30px;
-}
-
   .container{
     display: flex;
     flex-direction: row;
@@ -68,41 +48,30 @@ div {
     justify-content: center;
   }
 
-  .item{
-      width:10%;
-      display: flex;
-  }
-  .item.right{
-      justify-content: flex-start;
-  }
-
-  .item.center {
-      padding: 0 20px;
-  }
-
-  .item.left{
-      justify-content: flex-end;
-  }
- 
   .topnav {
+    background: #333;
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 64px;
+    top: 60px;
+    margin: 0;
   }
+  
   .topnavContainer{
     display: none;
     position: relative;
   }
 
-  .navbar{
+  .navbar {
+    list-style-type: none;
+    list-style: none;
+  }
+
+  .middlenav{
     margin: 16px 0;
     padding: 0;
-    list-style-type: none;
     overflow: hidden;
-    background-color: #333;
     justify-content: center;
-    list-style: none;
   }
     
   .navbar a {
@@ -125,20 +94,16 @@ div {
         border-right: none;
         }
   
-  ul.navbar li a:hover:not(.active) {background-color: #111; color: coral;}
+  ul.navbar li a:hover:not(.active-page) {color: coral;}
 
     
-  .active {
-    background: antiquewhite;
+ .active-page a {
+    color: coral;
+    border-bottom: 1px solid;
   }
-
-  a.active {
-    color: #333;
-  }
-  
-  
 
   .head {
+  background: #333;
 	position: fixed;
   display: none;
 	top: 15px;
@@ -198,98 +163,14 @@ div {
     width:100%;
     height:100%;
 }
-.travel-info{
-  display: flex;
-}
-.wedding{
-  text-align: center;
-  width: 50%;
-}
-.flights{
-  text-align: center;
-  width: 50%;
-}
-
-.flights div ul {
-  list-style-type:none;
-  padding: 0;
-}
 
   /* hide when widith is in phone */
-@media screen and (max-width: 600px) {
-  ul.middlenav{
-    display: none;
+  @media screen and (max-width: 600px) {
+    ul.middlenav{
+      display: none;
+    }
+    .head{
+      display: block;
+    }
   }
-  .head{
-    display: block;
-  }
-  .travel-info{
-    flex-direction: column;
-  }
-  .wedding{
-    margin: 16px 0;
-    width: 100%;
-  }
-  .flights{
-    margin-top: 16px;
-    width: 100%;
-  }
-}
 
-
-
-
-/* Slideshow container */
-.slideshow-container {
-  margin: auto;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}

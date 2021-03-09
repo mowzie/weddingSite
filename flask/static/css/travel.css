@@ -1,0 +1,50 @@
+.travel{
+  width: 80%;
+  margin: auto;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+
+
+  .info{
+    display: flex;
+    width: 65%;
+    padding: 14px;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .info div ul {
+    list-style-type:none;
+    padding: 0;
+  }
+
+  
+.map {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px 0 0;
+  min-width: 280px;
+  line-height: 24px;
+}
+
+  /* hide when widith is in phone */
+  @media screen and (max-width: 600px) {
+    .background {
+      background-size: contain;
+    }
+    .travel .info{
+      margin-top: 16px;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      padding: 0;
+    }
+    .map{
+      padding: 0;
+      align-items: normal;
+    }
+  }
