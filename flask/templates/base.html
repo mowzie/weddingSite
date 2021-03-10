@@ -1,104 +1,117 @@
 {% set navigation_bar = [
-  ('/', 'index', 'Home'),
-  ('/story.html', 'story', 'Our Story'),
-  ('/travel.html', 'travel', 'Tavel Info'),
-  ('/photos.html', 'photos', 'Photos'),
-  ('/registry.html', 'registry', 'Registry')
+('/', 'index', 'Home'),
+('/story.html', 'story', 'Our Story'),
+('/travel.html', 'travel', 'Tavel Info'),
+('/photos.html', 'photos', 'Photos'),
+('/registry.html', 'registry', 'Registry')
 ] %}
 
 {% set active_page = active_page|default('404') %}
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
-    <title>Ian & Jess Gett'n Hitched</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/base.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/{{active_page}}.css">
-    <link rel="stylesheet" href="https://use.typekit.net/cfj0clq.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="../static/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../static/img/favicon/site.webmanifest">
-    <!-- <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-DEL50H3TCV');
-    </script> -->
-  </head>
-  <body class="background">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Ian & Jess Gett'n Hitched</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/base.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/{{active_page}}.css">
+  <link rel="stylesheet" href="https://use.typekit.net/cfj0clq.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../static/img/favicon/site.webmanifest">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEL50H3TCV');
+  </script>
+</head>
+
+<body class="background">
+  <div>
     <div>
       <div>
         <div>
-          <div>            
-            <div>
-              <div class="head" onclick="myFunction()">
-                <div class="icon">
-                  <div></div>
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none">
-                  </svg>
-                </div>
-              
-              <div class="topnavContainer" id="myLinks">
-                <nav>
-                  <ul class="topnav navbar">
-                    {% for href, id, caption in navigation_bar %}
-                      <li{% if id == active_page %} class="active-page"{% endif%}>
-                        <a href="{{ href|e }}">{{ caption|e }}</a>
-                      </li>
+          <div class="head" onclick="myFunction()">
+            <div class="icon">
+              <div></div>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none">
+              </svg>
+            </div>
+
+            <div class="topnavContainer" id="myLinks">
+              <nav>
+                <ul class="topnav navbar">
+                  {% for href, id, caption in navigation_bar %}
+                  <li{% if id==active_page %} class="active-page" {% endif%}>
+                    <a href="{{ href|e }}">{{ caption|e }}</a>
+                    </li>
                     {% endfor %}
-                  </ul>
-                </nav>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <header class="infoBlockTop">
+          <h1>
+            <div class="center name">
+              Ian & Jess
+            </div>
+          </h1>
+          <div>
+            <div class="date center">
+              <div>
+                August 21, 2021
+              </div>
+              <div class="center-item">•</div>
+              <div>
+                Minneapolis, MN
               </div>
             </div>
           </div>
-          <header class="infoBlockTop">
-            <h1 class="names">
-              <div class="center">Ian & Jess</div>
-            </h1>
-            <div class="container">
-              <div class="center">August 21, 2021 • Minneapolis, MN</div>
-            </div>
-            <div class="countdown"> {{days}} Days To Go!</div>
-          </header>
-          <div>
-            <nav>
-              <ul class="middlenav navbar">
-                {% for href, id, caption in navigation_bar %}
-                  <li{% if id == active_page %} class="active-page"{% endif%}>
-                    <a href="{{ href|e }}">{{ caption|e }}</a>
-                  </li>
+          <div> {{days}} Days To Go!</div>
+        </header>
+        <div>
+          <nav>
+            <ul class="middlenav navbar">
+              {% for href, id, caption in navigation_bar %}
+              <li{% if id==active_page %} class="active-page" {% endif%}>
+                <a href="{{ href|e }}">{{ caption|e }}</a>
+                </li>
                 {% endfor %}
-              </ul>
-            </div>
-          </div>
-          {% block content %}
-          {% endblock %}
-          <div>
-            <div class="infoBlockBottom">
-            </div>
+            </ul>
+        </div>
+      </div>
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+      <div>
+        <div class="infoBlockBottom">
+        </div>
 
-          </div>
       </div>
     </div>
-    <script>
-      function myFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      };
-      </script>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEL50H3TCV"></script> -->
+  </div>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    };
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEL50H3TCV"></script>
 
-  </body>
+</body>
+
 </html>
