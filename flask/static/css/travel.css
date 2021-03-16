@@ -7,7 +7,6 @@
 
 .info {
   display: flex;
-  width: 65%;
   padding: 14px;
   flex-direction: row-reverse;
   align-items: center;
@@ -34,13 +33,16 @@
   }
   .travel .info {
     margin-top: 16px;
-    width: 100%;
     flex-direction: column;
     text-align: center;
-    padding: 0;
   }
   .map {
     padding: 0;
     align-items: normal;
+    order: 2;
+  }
+  .text {
+    order: 1;
+    margin-bottom: 10px;
   }
 }

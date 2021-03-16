@@ -21,9 +21,9 @@
 }
 
 .container {
-  width: 78%;
+  width: 70%;
   margin: auto;
-  min-height: 360px;
+  margin-bottom: 60px;
 }
 
 .infoBlockBottom {
