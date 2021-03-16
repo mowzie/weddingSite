@@ -1,7 +1,7 @@
 {% set navigation_bar = [
 ('/', 'index', 'Home'),
 ('/story.html', 'story', 'Our Story'),
-('/travel.html', 'travel', 'Tavel Info'),
+('/travel.html', 'travel', 'Travel Info'),
 ('/photos.html', 'photos', 'Photos'),
 ('/registry.html', 'registry', 'Registry')
 ] %}
@@ -14,8 +14,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
   <title>Ian & Jess Gett'n Hitched</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css"
+    integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../static/css/base.css">
   <link rel="stylesheet" type="text/css" href="../static/css/fonts.css">
   <link rel="stylesheet" type="text/css" href="../static/css/{{active_page}}.css">
@@ -36,67 +37,52 @@
 <body class="background">
   <div>
     <div>
-      <div>
-        <div>
-          <div class="head" onclick="myFunction()">
-            <div class="icon">
-              <div></div>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none">
-              </svg>
-            </div>
+      <nav id="menu" class="pure-menu">
+        <!-- [THE HAMBURGER] -->
+        <label for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
 
-            <div class="topnavContainer" id="myLinks">
-              <nav>
-                <ul class="topnav navbar">
-                  {% for href, id, caption in navigation_bar %}
-                  <li{% if id==active_page %} class="active-page" {% endif%}>
-                    <a href="{{ href|e }}">{{ caption|e }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-              </nav>
+        <ul class="pure-menu-list">
+          {% for href, id, caption in navigation_bar %}
+          <li{% if id==active_page %} class="pure-menu-item pure-menu-selected" {% endif%}>
+            <a href="{{ href|e }}" class="pure-menu-link">{{ caption|e }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+      </nav>
+      <header class="infoBlockTop">
+        <h1>
+          <div class="center name">
+            Ian & Jess
+          </div>
+        </h1>
+        <div>
+          <div class="date center">
+            <div>
+              August 21, 2021
+            </div>
+            <div class="center-item">•</div>
+            <div>
+              Minneapolis, MN
             </div>
           </div>
         </div>
-        <header class="infoBlockTop">
-          <h1>
-            <div class="center name">
-              Ian & Jess
-            </div>
-          </h1>
-          <div>
-            <div class="date center">
-              <div>
-                August 21, 2021
-              </div>
-              <div class="center-item">•</div>
-              <div>
-                Minneapolis, MN
-              </div>
-            </div>
-          </div>
-          <div> {{days}} Days To Go!</div>
-        </header>
-        <div>
-          <nav>
-            <ul class="middlenav navbar">
-              {% for href, id, caption in navigation_bar %}
-              <li{% if id==active_page %} class="active-page" {% endif%}>
-                <a href="{{ href|e }}">{{ caption|e }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-      </div>
-      <div class="container">
-        {% block content %}
-        {% endblock %}
-      </div>
+        <div> {{days}} Days To Go!</div>
+      </header>
       <div>
-        <div class="infoBlockBottom">
-        </div>
-
+        <nav>
+          <ul class="middlenav navbar">
+            {% for href, id, caption in navigation_bar %}
+            <li{% if id==active_page %} class="active-page" {% endif%}>
+              <a href="{{ href|e }}">{{ caption|e }}</a>
+              </li>
+              {% endfor %}
+          </ul>
       </div>
+    </div>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
     </div>
   </div>
   <script>
@@ -111,7 +97,6 @@
   </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEL50H3TCV"></script>
-
 </body>
 
 </html>
