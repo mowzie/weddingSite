@@ -1,13 +1,63 @@
 .photo {
-  margin: 16px;
   padding: 8px;
   border: 1px solid;
+  height: fit-content;
 }
 
 .float-right {
   float: right;
 }
 
-img {
-  object-fit: cover;
+.right {
+  text-align: right;
+}
+
+.chat-box {
+  padding: 10px;
+  background-color: white;
+}
+.chat-name {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dadde1;
+  color: #1d2129;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+}
+.chat-text {
+  color: #1d2129;
+  font-size: 13px;
+  line-height: 17px;
+  /* float: left; */
+  /* margin-bottom: 15px; */
+  /* position: relative; */
+  /* width: inherit; */
+  word-break: break-word;
+  /* z-index: 0; */
+  margin: auto;
+}
+.chat-date {
+  color: #8d949e;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.margin-right {
+  margin-right: 20px;
+}
+.margin-left {
+  margin-left: 20px;
+}
+
+.signed {
+  text-align: right;
+}
+
+@media screen and (max-width: 48em) {
+  .center {
+    margin: auto;
+  }
+  .signed {
+    text-align: center;
+  }
 }
