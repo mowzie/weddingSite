@@ -1,9 +1,9 @@
-.travel {
+/* .travel {
   align-content: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 
 .info {
   display: flex;
@@ -12,37 +12,48 @@
   align-items: center;
   justify-content: flex-end;
 }
-.info div ul {
+.map ul {
   list-style-type: none;
   padding: 0;
+  text-align: center;
+  line-height: 2em;
 }
 
 .map {
-  display: flex;
+  /* display: flex;
   align-items: center;
   flex-direction: column;
   padding: 0 20px 0 0;
   min-width: 280px;
-  line-height: 24px;
+  line-height: 24px; */
+}
+
+.margin-right {
+  margin-right: 20px;
+}
+.margin-left {
+  margin-left: 20px;
 }
 
 /* hide when widith is in phone */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 48em) {
   .background {
-    background-size: contain;
+    /* background-size: contain; */
   }
   .travel .info {
-    margin-top: 16px;
+    /* margin-top: 16px;
     flex-direction: column;
-    text-align: center;
+    text-align: center; */
   }
   .map {
     padding: 0;
-    align-items: normal;
+    /* align-items: normal; */
     order: 2;
   }
   .text {
     order: 1;
     margin-bottom: 10px;
+    text-align: center;
+    margin: auto;
   }
 }

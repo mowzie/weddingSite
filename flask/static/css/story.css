@@ -1,7 +1,12 @@
 .photo {
+  order: 2;
   padding: 8px;
   border: 1px solid;
   height: fit-content;
+}
+
+.text {
+  order: 1;
 }
 
 .float-right {
