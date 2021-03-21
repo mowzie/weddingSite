@@ -6,6 +6,7 @@ h1 {
   font-family: compendium;
 }
 body {
+  color: antiquewhite;
 }
 html,
 button,
@@ -16,6 +17,5 @@ textarea,
   /* Set your content font stack here: */
   font-family: questa;
   line-height: 1.5;
-  color: antiquewhite;
   font-family: questa;
 }

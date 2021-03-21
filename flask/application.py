@@ -7,7 +7,6 @@ import logging
 from datetime import datetime
 
 delta = datetime(2021, 8, 21, 13) - datetime.now()
-delta.days
 
 app = Flask(__name__)
 
@@ -22,7 +21,6 @@ mail_settings = {
 
 app.config.update(mail_settings)
 mail = Mail(app)
-
 
 @app.route('/')
 @app.route('/index')
@@ -55,7 +53,7 @@ def rsvp():
 	error = None
 	formfilled = request.cookies.get('rsvpstat')
 	if formfilled == '1':
-		return redirect(url_for('thankyou.html'))
+		return redirect(url_for('thankyou'))
 	if request.method == 'POST':
 		if 'inputName' in request.form:
 			if request.form['inputName'] == '':
@@ -82,9 +80,9 @@ def rsvp():
 				  f"Question: {inputComment}\n"
 				  f"Response: {inputDecision}"))
 		print("Sending an email!")
-		mail.send(msg)
-
-		resp = make_response(redirect(url_for('thankyou.html')))
+		#mail.send(msg)
+		print(msg)
+		resp = make_response(redirect(url_for('thankyou')))
 		resp.set_cookie('rsvpstat', '1')
 		return resp
 	return render_template('rsvp.html', days=delta.days, error=error)

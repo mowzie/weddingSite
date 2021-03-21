@@ -1,12 +1,7 @@
 .photo {
-  order: 2;
   padding: 8px;
   border: 1px solid;
   height: fit-content;
-}
-
-.text {
-  order: 1;
 }
 
 .float-right {
@@ -64,5 +59,11 @@
   }
   .signed {
     text-align: center;
+  }
+  .photo{
+    order: 2;
+  }
+  .text {
+    order: 1;
   }
 }
