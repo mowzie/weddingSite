@@ -2,6 +2,7 @@
 ('/', 'index', 'Home'),
 ('/story.html', 'story', 'Our Story'),
 ('/travel.html', 'travel', 'Travel Info'),
+('/rsvp.html', 'rsvp', 'RSVP'),
 ('/photos.html', 'photos', 'Photos'),
 ('/registry.html', 'registry', 'Registry')
 ] %}
@@ -14,7 +15,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ian & Jess Gett'n Hitched</title>
+  <title>
+    {% block title %}
+    {% endblock %}
+    Ian & Jess R Gett'n Hitched
+  </title>
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css"
     integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css">
