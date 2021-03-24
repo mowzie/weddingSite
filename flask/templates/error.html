@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found{% endblock %}
+{% block content %}
+<div class="center">
+  <h2>Error!</h2>
+  <p>Oh no! You hit an unexpected error</p>
+  <p>Email Ian at <a href="mailto:ian.littke@gmail.com">ian.littke@Gmail.com</a> with what you were trying to do</p>
+  <p>Or you can go back <a href="{{ url_for('index') }}">to somewhere nice</a>
+</div>
+{% endblock %}

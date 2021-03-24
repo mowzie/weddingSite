@@ -13,7 +13,7 @@ delta = datetime(2021, 8, 21, 13) - datetime.now()
 app = Flask(__name__)
 
 mail_settings = {
-    "MAIL_SERVER": 'smtp.gmail.com',
+    "MAIL_SERVER": 'email-smtp.us-west-2.amazonaws.com',
     "MAIL_PORT": 465,
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
@@ -27,7 +27,7 @@ mail = Mail(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('/index.html', days=delta.days, email=app.config.get("MAIL_USERNAME"), passwrd=app.config.get("MAIL_PASSWORD"))
+    return render_template('/index.html', days=delta.days)
 
 @app.route("/thankyou.html")
 def thankyou():
@@ -59,13 +59,17 @@ def rsvp():
 		if 'inputName' in request.form:
 			if request.form['inputName'] == '':
 				error = "Name field cannot be blank."
-				return render_template('rsvp.html', error=error)
+				return render_template('rsvp.html', days=delta.days, error=error)
 			else:
 				inputName = request.form['inputName']
 		if 'inputGuest' in request.form:
 			inputGuest = request.form['inputGuest']
 		if 'inputEmail' in request.form:
-			inputEmail = request.form['inputEmail']
+			if request.form['inputEmail'] == '':
+				error = "Email field cannot be blank."
+				return render_template('rsvp.html', days=delta.days, error=error)
+			else:
+				inputEmail = request.form['inputEmail']
 		if 'decision' in request.form:
 			inputDecision = request.form['decision']
 		if 'inputComment' in request.form:
@@ -73,7 +77,7 @@ def rsvp():
 
 		with app.app_context():
 			msg = Message(subject="Wedding RSVP",
-			sender=app.config.get("MAIL_USERNAME"),
+			sender='the.littkes@gmail.com',
 			recipients=["the.littkes@gmail.com"],
 			body=(f"From:     {inputName}\n"
 				  f"And:      {inputGuest}\n"
@@ -91,6 +95,11 @@ def rsvp():
 def page_not_found(e):
     # note that we set the 404 status explicitly
     return render_template('404.html', days=delta.days), 404
+
+@app.errorhandler(500)
+def internal_error(e):
+    # note that we set the 500 status explicitly
+    return render_template('error.html', days=delta.days), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False, port=5000)
