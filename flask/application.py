@@ -80,9 +80,7 @@ def rsvp():
 			      f"Email:    {inputEmail}\n"
 				  f"Question: {inputComment}\n"
 				  f"Response: {inputDecision}"))
-		print("Sending an email!")
-		#mail.send(msg)
-		print(msg)
+		mail.send(msg)
 		resp = make_response(redirect(url_for('thankyou')))
 		resp.set_cookie('rsvpstat', '1')
 		return resp
