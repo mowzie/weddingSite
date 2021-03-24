@@ -27,7 +27,7 @@ mail = Mail(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('/index.html', days=delta.days, email=os.environ['EMAIL'])
+    return render_template('/index.html', days=delta.days)
 
 @app.route("/thankyou.html")
 def thankyou():
