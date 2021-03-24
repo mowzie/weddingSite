@@ -6,6 +6,8 @@ from flask_mail import Mail, Message
 import logging
 from datetime import datetime
 
+
+
 delta = datetime(2021, 8, 21, 13) - datetime.now()
 
 app = Flask(__name__)
@@ -25,7 +27,6 @@ mail = Mail(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    print("browser time: ", request)
     return render_template('/index.html', days=delta.days, email=os.environ['EMAIL'])
 
 @app.route("/thankyou.html")
