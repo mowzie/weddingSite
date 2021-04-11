@@ -6,10 +6,6 @@ from flask_mail import Mail, Message
 import logging
 from datetime import datetime
 
-
-
-delta = datetime(2021, 8, 21, 13) - datetime.now()
-
 app = Flask(__name__)
 
 mail_settings = {
@@ -27,30 +23,37 @@ mail = Mail(app)
 @app.route('/')
 @app.route('/index')
 def index():
+	delta = datetime(2021, 8, 21, 13) - datetime.now()
     return render_template('/index.html', days=delta.days)
 
 @app.route("/thankyou.html")
 def thankyou():
+	delta = datetime(2021, 8, 21, 13) - datetime.now()
     return render_template('/thankyou.html', days=delta.days)
 
 @app.route("/travel.html")
 def travel():
+	delta = datetime(2021, 8, 21, 13) - datetime.now()
     return render_template('/travel.html', days=delta.days)
 
 @app.route("/story.html")
 def story():
+	delta = datetime(2021, 8, 21, 13) - datetime.now()
     return render_template('/story.html', days=delta.days)
 
 @app.route("/photos.html")
 def photos():
+	delta = datetime(2021, 8, 21, 13) - datetime.now()
     return render_template('/photos.html', days=delta.days)
 
 @app.route("/registry.html")
 def registry():
+	delta = datetime(2021, 8, 21, 13) - datetime.now()
     return render_template('/registry.html', days=delta.days)
 
 @app.route('/rsvp.html', methods=['GET', 'POST'])
 def rsvp():
+	delta = datetime(2021, 8, 21, 13) - datetime.now()
 	error = None
 	formfilled = request.cookies.get('rsvpstat')
 	if formfilled == '1':
@@ -93,6 +96,7 @@ def rsvp():
 
 @app.errorhandler(404)
 def page_not_found(e):
+	delta = datetime(2021, 8, 21, 13) - datetime.now()
     # note that we set the 404 status explicitly
     return render_template('404.html', days=delta.days), 404
 
