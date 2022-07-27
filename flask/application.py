@@ -1,10 +1,16 @@
 import os.path
 import json
+import re
+import requests
+import sys
 from flask import Flask, send_from_directory, url_for, redirect, flash, make_response
 from flask import render_template, request
 from flask_mail import Mail, Message
 import logging
 from datetime import datetime
+
+
+SCOPES = ['https://www.googleapis.com/auth/photoslibrary.readonly']
 
 app = Flask(__name__)
 
@@ -43,8 +49,16 @@ def story():
 
 @app.route("/photos.html")
 def photos():
+    link = "https://photos.google.com/share/AF1QipN-gdB9_hmJ4vS0fysQ8bzgsdSRDbk05nvWpdptW7VadGRtCzQn9MeUD_rMCkDhDA?key=ajczZEJuNDg2eWF4aVRBaHdFaGhqdG41WHp3U2dB"
+    response = requests.get(link)
+
+    pattern = "\[\"(https:\/\/lh3\.googleusercontent\.com/[a-zA-Z0-9\-_]*)\""
+
+    photoSet = set(re.findall(pattern, response.text))
+
     delta = datetime(2021, 8, 21, 13) - datetime.now()
-    return render_template('/photos.html', days=delta.days)
+    return render_template('/photos.html', days=delta.days, len=len(photoSet), photoList=photoSet)
+
 
 @app.route("/registry.html")
 def registry():

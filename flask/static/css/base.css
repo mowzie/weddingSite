@@ -1,7 +1,5 @@
 .background {
   background: url(../img/background-flipped.jpg), url(../img/background.jfif);
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: bottom, top;
   background-blend-mode: lighten;
 }
