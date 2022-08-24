@@ -10,24 +10,27 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-delta = datetime.now() - datetime(2021, 8, 21, 13)
+
 
 @app.route('/')
 @app.route('/index')
 def index():
-    
+    delta = datetime.today() - datetime(2021, 8, 21, 13)
     return render_template('/index.html', days=delta.days)
 
 @app.route("/thankyou.html")
 def thankyou():
+    delta = datetime.today() - datetime(2021, 8, 21, 13)
     return render_template('/thankyou.html', days=delta.days)
 
 @app.route("/travel.html")
 def travel():
+    delta = datetime.today() - datetime(2021, 8, 21, 13)
     return render_template('/travel.html', days=delta.days)
 
 @app.route("/story.html")
 def story():
+    delta = datetime.today() - datetime(2021, 8, 21, 13)
     return render_template('/story.html', days=delta.days)
 
 @app.route("/photos.html")
@@ -38,7 +41,7 @@ def photos():
     pattern = "\[\"(https:\/\/lh3\.googleusercontent\.com/[a-zA-Z0-9\-_]*)\""
 
     photoSet = set(re.findall(pattern, response.text))
-
+    delta = datetime.today() - datetime(2021, 8, 21, 13)
     return render_template('/photos.html', days=delta.days, len=len(photoSet), photoList=photoSet)
 
 
@@ -93,11 +96,13 @@ def photos():
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
+    delta = datetime.today() - datetime(2021, 8, 21, 13)
     return render_template('404.html', days=delta.days), 404
 
 @app.errorhandler(500)
 def internal_error(e):
     # note that we set the 500 status explicitly
+    delta = datetime.today() - datetime(2021, 8, 21, 13)
     return render_template('error.html', days=delta.days), 500
 
 if __name__ == '__main__':
